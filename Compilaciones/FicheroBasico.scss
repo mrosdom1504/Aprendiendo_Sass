@@ -1,0 +1,33 @@
+// Definición de variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Arial', sans-serif;
+
+// Mixin para botones
+@mixin button-style($bg-color) {
+  background-color: $bg-color;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Estilos generales
+body {
+  font-family: $font-stack;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+}
+
+h1 {
+  color: $primary-color;
+}
+
+
+
+
