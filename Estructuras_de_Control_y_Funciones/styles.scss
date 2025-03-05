@@ -1,0 +1,61 @@
+// Lista de colores para las filas
+$colores: #ff0000, #ff00ff, #00ffcc, #ffff00, #808080, #ff9900;
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  text-align: center;
+  border: 1px solid #000;
+
+  th {
+    background-color: #00ff00;
+    color: #333;
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+    color: white;
+    border: 1px solid #000;
+  }
+
+  // Asignar colores a las filas usando un bucle Sass
+  @for $i from 1 through length($colores) {
+    tbody tr:nth-child(#{$i}) {
+      background-color: nth($colores, $i);
+    }
+  }
+}
+
+// Generar estilos para h1-h6 con un bucle
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: 30px - ($i * 2px);
+    font-weight: bold;
+  }
+}
+
+// Función para calcular anchura según breakpoints
+@function calcularAnchura($size) {
+  @return $size * 1%;
+}
+
+// Uso de la función en breakpoints
+@media (max-width: 1024px) {
+  table {
+    width: calcularAnchura(80);
+  }
+}
+
+@media (max-width: 768px) {
+  table {
+    width: calcularAnchura(90);
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    width: calcularAnchura(100);
+  }
+}
