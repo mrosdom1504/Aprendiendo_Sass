@@ -1,0 +1,51 @@
+// Lista de colores para las filas de la tabla
+$colores: #ff0000, #ff00ff, #00ff00, #ffff00, #808080, #ffa500;
+
+// Mixin para aplicar los colores a las filas de la tabla
+@mixin colorear-filas($colores) {
+  @for $i from 1 through length($colores) {
+    tbody tr:nth-child(#{$i}) {
+      background-color: nth($colores, $i);
+    }
+  }
+}
+
+// Función para calcular la anchura en distintos breakpoints
+@function calcularAnchura($base, $factor) {
+  @return $base * $factor + px;
+}
+
+// Aplicamos estilos generales
+body {
+  font-family: Arial, sans-serif;
+}
+
+section {
+  width: calcularAnchura(300, 2); // 600px
+  margin: auto;
+  text-align: center;
+}
+
+// Estilos para la tabla
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  th {
+    background-color: #00ff00;
+  }
+
+  @include colorear-filas($colores); // Aplicamos el mixin de colores
+}
+
+// Generar tamaños personalizados para h1-h6 usando @for
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: calcularAnchura(10, (7 - $i)); // Tamaños desde 60px hasta 10px
+  }
+}
