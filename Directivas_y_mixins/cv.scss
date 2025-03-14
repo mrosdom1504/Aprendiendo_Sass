@@ -1,0 +1,48 @@
+/// Importación de archivos parciales.
+/// @group Importaciones
+@import 'variables'; /// Archivo de variables.
+@import 'estructuras_repetitivas'; /// Archivo de estructuras repetitivas.
+@import 'funciones'; /// Archivo de funciones.
+@import 'temas'; /// Archivo de temas.
+@import 'mixins'; /// Archivo de mixins.
+@import 'menu'; /// Archivo de estilos del menú.
+
+/// Estilos globales para el cuerpo de la página.
+/// @group Globales
+body {
+  line-height: 1.6; /// Altura de línea para mejorar la legibilidad.
+  color: $primary-color; /// Color del texto.
+}
+
+/// Estilos para los encabezados.
+/// @group Tipografía
+h1, h2, h3 {
+  color: $primary-color; /// Color de los encabezados.
+}
+
+/// Estilos para los enlaces.
+/// @group Componentes
+a {
+  color: $primary-color; /// Color del enlace.
+  text-decoration: none; /// Elimina el subrayado predeterminado.
+
+  /// Estilos al pasar el mouse sobre el enlace.
+  &:hover {
+    color: $secondary-color; /// Cambia el color al pasar el mouse.
+  }
+}
+
+/// Estilos para las secciones.
+/// @group Layout
+section {
+  margin-bottom: 2rem; /// Margen inferior para separar secciones.
+}
+
+/// Estilos para el pie de página.
+/// @group Componentes
+footer {
+  background-color: $primary-color; /// Color de fondo.
+  color: white; /// Color del texto.
+  text-align: center; /// Alineación del texto.
+  padding: calcular-rem(20); /// Relleno interno.
+}

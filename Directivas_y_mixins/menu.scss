@@ -1,0 +1,20 @@
+@import 'variables';
+@import 'funciones';
+
+.menu {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: $primary-color;
+  padding: calcular-rem(10);
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin: calcular-rem(15);
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
